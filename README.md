@@ -15,8 +15,10 @@ the project will be automatically opened without user input.
 
 ## Usage
 
+```bash
 tmuxinator-fzf-start.sh
 tmuxinator-fzf-start.sh "Query"
+```
 
 ## Expectations
 
