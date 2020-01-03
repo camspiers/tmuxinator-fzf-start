@@ -39,7 +39,7 @@ if [ -n "$SELECTED_PROJECTS" ]; then
 
     # Start each project without attaching
     for PROJECT in $SELECTED_PROJECTS; do
-        tmuxinator start "$PROJECT" -a false # force disable attaching
+        tmuxinator start "$PROJECT" --no-attach # force disable attaching
     done
 
     # If inside tmux then select session to switch, otherwise just attach
