@@ -31,7 +31,7 @@
 # Allow the user to select projects via fzf
 SELECTED_PROJECTS=$(tmuxinator list -n |
     tail -n +2 |
-    fzf --prompt="Project: " -m -1 -q "$1" --reverse --height 50%)
+    fzf --prompt="Project: " -m -1 -q "$1")
 
 if [ -n "$SELECTED_PROJECTS" ]; then
     # Set the IFS to \n to iterate over \n delimited projects
@@ -44,7 +44,7 @@ if [ -n "$SELECTED_PROJECTS" ]; then
 
     # If inside tmux then select session to switch, otherwise just attach
     if [ -n "$TMUX" ]; then
-        SESSION=$(tmux list-sessions -F "#S" | fzf --prompt="Session: " --reverse --height 50%)
+        SESSION=$(tmux list-sessions -F "#S" | fzf --prompt="Session: ")
         if [ -n "$SESSION" ]; then
             tmux switch-client -t "$SESSION"
         fi
